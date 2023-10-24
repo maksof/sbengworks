@@ -1,0 +1,26 @@
+.nav a {
+	display: block;
+	width: 100%;
+	.nav-menu {
+		transition: 0.3s;
+		@apply text-base cursor-pointer relative  font-medium capitalize lg:px-5 px-10 lg:py-8 py-4 hover:text-primary;
+		&::after {
+			content: '';
+			transition: 0.3s;
+			@apply absolute left-0 bottom-0 w-0 h-1 bg-primary;
+		}
+		&:hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+	&.active{
+		.nav-menu{
+			@apply text-primary;
+			&::after{
+				width: 100%;
+			}
+		}
+	}
+}
